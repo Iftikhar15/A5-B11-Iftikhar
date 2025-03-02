@@ -97,13 +97,14 @@
                 </div>
                 
                 <!-- Discover Something New -->
+                 <button  onclick="window.open('blog.html', '_blank')">
                 <div class="bg-blue-gradient text-white px-10 py-2 rounded-lg shadow flex items-center space-x-3">
                     <div class="flex gap-2">
                             <img src="/assets/board.png" alt="Calendar" class="w-14 h-16">
                             <span class="text-xl font-semibold">Discover Something <br> New Today!</span>
                     </div>
                 </div>
-                
+            </button>
                 <!-- Date Display -->
                 <div class="flex items-center bg-gray-50 p-4 shadow rounded-lg space-x-2 px-8">
                     <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" alt="Calendar" class="w-6 h-6">
@@ -114,7 +115,7 @@
                 </div>
             </div>
 
-            
+            <!-- Cart section -->
             <div class="grid grid-cols-3 gap-4">
                 <div class="bg-gray-50 p-4 rounded-lg shadow">
                     <span class="text-sm font-semibold text-gray-600">ShopEase</span>
@@ -123,7 +124,7 @@
                     <div class="flex justify-between items-center mt-4">
                         <span class="text-gray-600 text-sm">Deadline: 21 March 2025</span>
                         <button
-                        onclick="selectWristSize('a')"
+                        onclick="selectWristSize('a', 'Fix Mobile Button Issue')"
                          class="bg-blue-600 text-white px-3 py-1 text-sm rounded-lg"
                          id="size-a">Completed
                         </button>
@@ -136,7 +137,7 @@
                     <div class="flex justify-between items-center mt-4">
                         <span class="text-gray-600 text-sm">Deadline: 21 March 2025</span>
                         <button
-                        onclick="selectWristSize('b')"
+                        onclick="selectWristSize('b', 'Add Dark Mode')"
                          class="bg-blue-600 text-white px-3 py-1 text-sm rounded-lg"
                          id="size-b">Completed
                         </button>
@@ -149,7 +150,7 @@
                     <div class="flex justify-between items-center mt-4">
                         <span class="text-gray-600 text-sm">Deadline: 21 March 2025</span>
                         <button
-                        onclick="selectWristSize('c')"
+                        onclick="selectWristSize('c', 'Optimize Home Page')"
                          class="bg-blue-600 text-white px-3 py-1 text-sm rounded-lg"
                          id="size-c">Completed
                         </button>
@@ -165,7 +166,7 @@
                     <div class="flex justify-between items-center mt-4">
                         <span class="text-gray-600 text-sm">Deadline: 21 March 2025</span>
                         <button
-                        onclick="selectWristSize('d')"
+                        onclick="selectWristSize('d', 'Add New Emoji 🙌')"
                          class="bg-blue-600 text-white px-3 py-1 text-sm rounded-lg"
                          id="size-d">Completed
                         </button>
@@ -178,7 +179,7 @@
                     <div class="flex justify-between items-center mt-4">
                         <span class="text-gray-600 text-sm">Deadline: 21 March 2025</span>
                         <button
-                        onclick="selectWristSize('e')"
+                        onclick="selectWristSize('e', 'Integrate OpenAI API')"
                          class="bg-blue-600 text-white px-3 py-1 text-sm rounded-lg"
                          id="size-e">Completed
                         </button>
@@ -191,7 +192,7 @@
                     <div class="flex justify-between items-center mt-4">
                         <span class="text-gray-600 text-sm">Deadline: 21 March 2025</span>
                         <button
-                        onclick="selectWristSize('f')"
+                        onclick="selectWristSize('f', 'Improve Job Searching')"
                          class="bg-blue-600 text-white px-3 py-1 text-sm rounded-lg"
                          id="size-f">Completed
                         </button>
@@ -206,15 +207,9 @@
             </div >
             <div class="flex justify-center mb-10">
                 <button class="bg-blue-600 text-white px-3 py-1 text-sm rounded-lg justify-center "
-                id="clrBtn">clear History</button>
+                id="clrBtn" onclick="clearAllComments()">clear History</button>
             </div> 
-            <div id="notiContainer gap-4" class="hidden">
-                <p class="comment">You have Completed the task fix mobile Issue</p>
-                <p class="comment">You have Completed the task Add Dark Mode</p>
-                <p class="comment">You have Completed the task Optimize Home page</p>
-                <p class="comment">You have Completed the task Add new emoji</p>
-                <p class="comment">You have Completed the task Integrate OpenAI API</p>
-                <p class="comment">You have Completed the task Improve Job Searching</p>
+            <div id="notiContainer" class="gap-4">
             </div>
         </div>
        

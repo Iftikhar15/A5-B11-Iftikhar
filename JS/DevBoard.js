@@ -1,7 +1,4 @@
-document.getElementById("clrBtn").addEventListener("click",function(){
-    //  console.log("clicked");
-     document.getElementById("notiContainer").classList.remove("hidden");
-});
+
 
 
 
@@ -10,7 +7,8 @@ document.getElementById("clrBtn").addEventListener("click",function(){
 let count = 23;
 let countTask = 6;
 
-function selectWristSize(size) {
+function selectWristSize(size, title) {
+    console.log(title);
     const sizes = ["a", "b", "c", "d", "e", "f"];
     for (let i = 0; i < sizes.length; i++) {
         const button = document.getElementById("size-" + sizes[i]);
@@ -21,6 +19,12 @@ function selectWristSize(size) {
             button.classList.add("disabled-button"); 
 
             alert("board updated successfully");
+            const container = document.getElementById("notiContainer");
+            const comment = document.createElement("p");
+            comment.className = "comment";
+            comment.innerText = `You have completed ${title} task.`;
+            console.log(container, comment);
+            container.appendChild(comment);
             count++;
             document.getElementById("counterPositive").innerText = count;
 
@@ -33,6 +37,12 @@ function selectWristSize(size) {
             }
         }
     }
+}
+
+function clearAllComments() {
+    const container = document.getElementById("notiContainer");
+    const comments = container.querySelectorAll("p.comment");
+    comments.forEach(comment => comment.remove());
 }
 
 
@@ -55,8 +65,11 @@ function updateDateTime() {
     document.getElementById("dateTimeDiv").textContent = formattedDateTime;
 }
 
-// Update time every second
-setInterval(updateDateTime, 1000);
 
-// Initialize time on page load
+setInterval(updateDateTime, 1000);
 window.onload = updateDateTime;
+
+
+
+function openPage() {
+     window.location.href = 'blog,html';}
