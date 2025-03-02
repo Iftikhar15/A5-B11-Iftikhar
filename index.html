@@ -1,11 +1,230 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Board</title>
+    <title>DevBoard.netify.app</title>
+
+    <!-- Tailwind css -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- DaisyUI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+       @layer utilities {
+                
+            .bg-blue-gradient {
+                    background: linear-gradient(to bottom right, #3752FD 30%, #9BA8F8 100%);
+                }
+ 
+            }
+            .comment{
+           
+            background-color: #f9fafb;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+            }
+
+        
+    </style>
+
+
+
 </head>
-<body>
+<body class="bg-gray-100">
+    <!-- header section -->
+    <header  >
+        <div class=" p-6">
+        <div class="navbar max-w-7xl mx-auto bg-white p-6 rounded-lg shadow-md ">
+            
+
+
+            <div class="flex-1">
+            <div></div>
+            <img src="/assets/logo.png" alt="">
+              <a class="btn btn-ghost text-xl"><span>Dev<span class="font-bold">Board</span></a>
+            </div>
+            <div class="flex-none flex-end bg-white p-2 gap-2">
+              
+               <div class="flex justify-center bg-white px-4 rounded-full shadow gap-2">
+                  <div class="indicator btn btn-ghost btn-circle">
+                    <img src="/assets/checkbox.png" alt="">
+                  </div>
+
+                  <div>
+                  <p class="btn btn-ghost h-full font-bold text-lg"
+                  id="counterPositive">23</p>
+                  </div>
+              </div> 
+              
+                <div class="btn btn-ghost btn-circle avatar w-10 rounded-full shadow" id="colorBtn">
+                  
+                    <button>
+                    <img
+                      alt="Tailwind CSS Navbar component"
+                      src="/assets/theme-btn.png" />
+                    </button>
+                  
+                </div>
+            </div>
+          </div>
+        </div>
+    </header>
+    <!--main section  -->
+    <main>
+        
+        <div class="flex max-w-7xl mx-auto gap-6">
+        <div class="max-w-7xl mx-auto bg-white p-6 rounded-lg shadow-md  w-2/3">
+
+            <div class="flex justify-between items-center mb-6 ">
+
+                <!-- Task Assigned -->
+                <div class="flex items-center bg-gray-50 p-4 shadow rounded-lg space-x-3 px-8">
+                    <div class="bg-white p-2 rounded-full shadow">
+                        <img src="/assets/checkbox.png" alt="">
+                    </div>
+                    <div>
+                        <span class="text-gray-600 text-sm">Task Assigned</span>
+                        <p class="font-bold text-gray-900 text-lg"
+                        id="counterNegative">06</p>
+                    </div>
+                </div>
+                
+                <!-- Discover Something New -->
+                <div class="bg-blue-gradient text-white px-10 py-2 rounded-lg shadow flex items-center space-x-3">
+                    <div class="flex gap-2">
+                            <img src="/assets/board.png" alt="Calendar" class="w-14 h-16">
+                            <span class="text-xl font-semibold">Discover Something <br> New Today!</span>
+                    </div>
+                </div>
+                
+                <!-- Date Display -->
+                <div class="flex items-center bg-gray-50 p-4 shadow rounded-lg space-x-2 px-8">
+                    <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" alt="Calendar" class="w-6 h-6">
+                    <div id="dateTimeDiv">
+                        <span id="dayElement"></span>
+                        <h3 class="font-bold text-gray-900">Jul 28 2025</h3>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="grid grid-cols-3 gap-4">
+                <div class="bg-gray-50 p-4 rounded-lg shadow">
+                    <span class="text-sm font-semibold text-gray-600">ShopEase</span>
+                    <h3 class="font-bold text-gray-800">Fix Mobile Button Issue</h3>
+                    <p class="text-gray-500 text-sm">Debug using Chrome DevTools, check for overlap...</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-gray-600 text-sm">Deadline: 21 March 2025</span>
+                        <button
+                        onclick="selectWristSize('a')"
+                         class="bg-blue-600 text-white px-3 py-1 text-sm rounded-lg"
+                         id="size-a">Completed
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow">
+                    <span class="text-sm font-semibold text-gray-600">CloudSync</span>
+                    <h3 class="font-bold text-gray-800">Add Dark Mode</h3>
+                    <p class="text-gray-500 text-sm">Store the user’s preference in localStorage, update CSS vari...</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-gray-600 text-sm">Deadline: 21 March 2025</span>
+                        <button
+                        onclick="selectWristSize('b')"
+                         class="bg-blue-600 text-white px-3 py-1 text-sm rounded-lg"
+                         id="size-b">Completed
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow">
+                    <span class="text-sm font-semibold text-gray-600">SwiftPay</span>
+                    <h3 class="font-bold text-gray-800">Optimize Home Page</h3>
+                    <p class="text-gray-500 text-sm">Debug using Chrome DevTools, check for overlap...</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-gray-600 text-sm">Deadline: 21 March 2025</span>
+                        <button
+                        onclick="selectWristSize('c')"
+                         class="bg-blue-600 text-white px-3 py-1 text-sm rounded-lg"
+                         id="size-c">Completed
+                        </button>
+                    </div>
+                </div>
+            </div>
     
+            <div class="mt-6 grid grid-cols-3 gap-4">
+                <div class="bg-gray-50 p-4 rounded-lg shadow">
+                    <span class="text-sm font-semibold text-gray-600">Meta</span>
+                    <h3 class="font-bold text-gray-800">Add New Emoji 🙌</h3>
+                    <p class="text-gray-500 text-sm">Debug using Chrome DevTools, check for overlap...</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-gray-600 text-sm">Deadline: 21 March 2025</span>
+                        <button
+                        onclick="selectWristSize('d')"
+                         class="bg-blue-600 text-white px-3 py-1 text-sm rounded-lg"
+                         id="size-d">Completed
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow">
+                    <span class="text-sm font-semibold text-gray-600">Google LLC</span>
+                    <h3 class="font-bold text-gray-800">Integrate OpenAI API</h3>
+                    <p class="text-gray-500 text-sm">Debug using Chrome DevTools, check for overlap...</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-gray-600 text-sm">Deadline: 21 March 2025</span>
+                        <button
+                        onclick="selectWristSize('e')"
+                         class="bg-blue-600 text-white px-3 py-1 text-sm rounded-lg"
+                         id="size-e">Completed
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow">
+                    <span class="text-sm font-semibold text-gray-600">Glassdoor</span>
+                    <h3 class="font-bold text-gray-800">Improve Job Searching</h3>
+                    <p class="text-gray-500 text-sm">Debug using Chrome DevTools, check for overlap...</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-gray-600 text-sm">Deadline: 21 March 2025</span>
+                        <button
+                        onclick="selectWristSize('f')"
+                         class="bg-blue-600 text-white px-3 py-1 text-sm rounded-lg"
+                         id="size-f">Completed
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto bg-white p-6 rounded-lg shadow-md  w-1/3">
+            <div class="flex gap-2 justify-center mb-4">
+                <img src="/assets/activity.png" alt="">
+                <h2>Activity Log</h2>
+            </div >
+            <div class="flex justify-center mb-10">
+                <button class="bg-blue-600 text-white px-3 py-1 text-sm rounded-lg justify-center "
+                id="clrBtn">clear History</button>
+            </div> 
+            <div id="notiContainer gap-4" class="hidden">
+                <p class="comment">You have Completed the task fix mobile Issue</p>
+                <p class="comment">You have Completed the task Add Dark Mode</p>
+                <p class="comment">You have Completed the task Optimize Home page</p>
+                <p class="comment">You have Completed the task Add new emoji</p>
+                <p class="comment">You have Completed the task Integrate OpenAI API</p>
+                <p class="comment">You have Completed the task Improve Job Searching</p>
+            </div>
+        </div>
+       
+       
+        </div>
+
+
+        
+        
+    </main>
+    <script src="/JS/DevBoard.js"></script>
 </body>
 </html>
