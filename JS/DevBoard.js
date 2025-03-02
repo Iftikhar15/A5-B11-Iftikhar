@@ -21,8 +21,9 @@ function selectWristSize(size, title) {
             alert("board updated successfully");
             const container = document.getElementById("notiContainer");
             const comment = document.createElement("p");
+            const taskCompleteTime=new Date().toLocaleTimeString()
             comment.className = "comment";
-            comment.innerText = `You have completed ${title} task.`;
+            comment.innerText = `You have completed ${title} task at ${taskCompleteTime}.`;
             console.log(container, comment);
             container.appendChild(comment);
             count++;
